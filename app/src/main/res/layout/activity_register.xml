@@ -1,9 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".view.activity.login.registerPage.RegisterActivity">
+    xmlns:tools="http://schemas.android.com/tools" >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.activity.login.registerPage.RegisterActivity">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/logo"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/idTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="50dp"
+            android:text="ID"
+            android:textColor="@color/black"
+            android:textSize="10pt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/logo"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:id="@+id/idText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="43dp"
+            android:ems="12"
+            android:hint="ID"
+            android:inputType="textPersonName"
+            android:paddingStart="8dp"
+            android:backgroundTint="@color/gray"
+            app:layout_constraintStart_toEndOf="@+id/idTitle"
+            app:layout_constraintTop_toBottomOf="@+id/logo"
+            tools:ignore="Autofill,HardcodedText,RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/pwTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="50dp"
+            android:text="PW"
+            android:textColor="@color/black"
+            android:textSize="10pt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/idTitle"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:id="@+id/pwText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="46dp"
+            android:layout_marginTop="36dp"
+            android:ems="12"
+            android:hint="PW"
+            android:inputType="textPersonName"
+            android:paddingStart="8dp"
+            android:backgroundTint="@color/gray"
+            app:layout_constraintStart_toEndOf="@+id/pwTitle"
+            app:layout_constraintTop_toBottomOf="@+id/idText"
+            tools:ignore="Autofill,HardcodedText,RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/mailTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="50dp"
+            android:text="MAIL"
+            android:textColor="@color/black"
+            android:textSize="10pt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pwTitle"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:id="@+id/mailText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="36dp"
+            android:ems="12"
+            android:hint="E-MAIL"
+            android:inputType="textEmailAddress"
+            android:backgroundTint="@color/gray"
+            app:layout_constraintStart_toEndOf="@+id/mailTitle"
+            app:layout_constraintTop_toBottomOf="@+id/pwText"
+            tools:ignore="Autofill,HardcodedText,LabelFor" />
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="30dp"
+            android:text="이용약관 동의"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mailText"
+            tools:ignore="HardcodedText" />
+
+        <CheckBox
+            android:id="@+id/checkBox2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="8dp"
+            android:text="개인정보 취급방침 동의"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/checkBox"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/registerButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="50dp"
+            android:background="@drawable/login_button_radius"
+            android:text="회원가입"
+            android:textColor="@color/white"
+            android:textSize="8pt"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/checkBox2"
+            tools:ignore="HardcodedText" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -17,6 +17,8 @@ public class LoginActivity extends AppCompatActivity {
 
     ActivityLoginBinding binding;
 
+    Intent intent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +43,7 @@ public class LoginActivity extends AppCompatActivity {
         clickLoginButton();
         clickFindIdButton();
         clickFindPwButton();
+        clickRegisterButton();
     }
 
     private void clickLoginButton() {
@@ -49,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
 
             Toast.makeText(getApplicationContext(), "잠시만 기다려주세요", Toast.LENGTH_SHORT).show();
 
-            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
         });
     }
@@ -60,7 +63,7 @@ public class LoginActivity extends AppCompatActivity {
 
             Toast.makeText(getApplicationContext(), "잠시만 기다려주세요", Toast.LENGTH_SHORT).show();
 
-            Intent intent = new Intent(getApplicationContext(), FindIdActivity.class);
+            intent = new Intent(getApplicationContext(), FindIdActivity.class);
             startActivity(intent);
         });
     }
@@ -71,7 +74,18 @@ public class LoginActivity extends AppCompatActivity {
 
             Toast.makeText(getApplicationContext(), "잠시만 기다려주세요", Toast.LENGTH_SHORT).show();
 
-            Intent intent = new Intent(getApplicationContext(), FindPwActivity.class);
+            intent = new Intent(getApplicationContext(), FindPwActivity.class);
+            startActivity(intent);
+        });
+    }
+
+    private void clickRegisterButton() {
+
+        binding.registerButton.setOnClickListener(v -> {
+
+            Toast.makeText(getApplicationContext(), "잠시만 기다려주세요", Toast.LENGTH_SHORT).show();
+
+            intent = new Intent(getApplicationContext(), RegisterActivity.class);
             startActivity(intent);
         });
     }
