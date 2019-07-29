@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.activity.login.registerPage.RegisterActivity">
+    tools:context=".view.activity.findPage.FindPwActivity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

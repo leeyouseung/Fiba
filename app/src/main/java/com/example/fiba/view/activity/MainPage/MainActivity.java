@@ -1,4 +1,4 @@
-package com.example.fiba.view.activity;
+package com.example.fiba.view.activity.MainPage;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
