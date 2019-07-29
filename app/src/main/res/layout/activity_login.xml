@@ -94,7 +94,7 @@
             android:textColor="@color/black"
             android:textSize="7pt"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button"
+            app:layout_constraintTop_toBottomOf="@+id/loginButton"
             tools:ignore="HardcodedText" />
 
         <TextView
@@ -107,7 +107,7 @@
             android:textColor="@color/black"
             android:textSize="7pt"
             app:layout_constraintStart_toEndOf="@+id/bar"
-            app:layout_constraintTop_toBottomOf="@+id/button"
+            app:layout_constraintTop_toBottomOf="@+id/loginButton"
             tools:ignore="HardcodedText" />
 
         <TextView
@@ -120,7 +120,7 @@
             android:textColor="@color/black"
             android:textSize="7pt"
             app:layout_constraintStart_toEndOf="@+id/findIdButton"
-            app:layout_constraintTop_toBottomOf="@+id/button"
+            app:layout_constraintTop_toBottomOf="@+id/loginButton"
             tools:ignore="HardcodedText" />
 
         <TextView
