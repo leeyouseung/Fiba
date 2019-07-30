@@ -51,10 +51,10 @@ public class MainActivity extends AppCompatActivity {
 
         binding.mainButton.setOnClickListener(v -> {
 
-            binding.mainButton.setImageDrawable(getResources().getDrawable(R.drawable.list_act));
-            binding.addButton.setImageDrawable(getResources().getDrawable(R.drawable.plus));
+            binding.mainButton.setImageDrawable(getResources().getDrawable(R.drawable.main_act));
+            binding.addButton.setImageDrawable(getResources().getDrawable(R.drawable.add));
             binding.searchButton.setImageDrawable(getResources().getDrawable(R.drawable.search));
-            binding.myPageButton.setImageDrawable(getResources().getDrawable(R.drawable.people));
+            binding.myPageButton.setImageDrawable(getResources().getDrawable(R.drawable.myPage));
 
             binding.mainButtonText.setVisibility(View.VISIBLE);
             binding.addButtonText.setVisibility(View.INVISIBLE);
@@ -72,65 +72,69 @@ public class MainActivity extends AppCompatActivity {
 
     private void clickAddButton() {
 
-        plusButton.setOnClickListener(v -> {
+        binding.addButton.setOnClickListener(v -> {
 
-            listButton.setImageDrawable(getResources().getDrawable(R.drawable.list));
-            plusButton.setImageDrawable(getResources().getDrawable(R.drawable.plus_act));
-            searchButton.setImageDrawable(getResources().getDrawable(R.drawable.search));
-            peopleButton.setImageDrawable(getResources().getDrawable(R.drawable.people));
+            binding.mainButton.setImageDrawable(getResources().getDrawable(R.drawable.main));
+            binding.addButton.setImageDrawable(getResources().getDrawable(R.drawable.add_act));
+            binding.searchButton.setImageDrawable(getResources().getDrawable(R.drawable.search));
+            binding.myPageButton.setImageDrawable(getResources().getDrawable(R.drawable.myPage));
 
-            listButtonText.setVisibility(View.INVISIBLE);
-            plusButtonText.setVisibility(View.VISIBLE);
-            searchButtonText.setVisibility(View.INVISIBLE);
-            peopleButtonText.setVisibility(View.INVISIBLE);
-
-            Intent intent = new Intent(getApplicationContext(), AddFragment.class);
-            startActivity(intent);
-        });
-    }
-
-    private void clickSearchButton() {
-
-        searchButton.setOnClickListener(v -> {
-
-            listButton.setImageDrawable(getResources().getDrawable(R.drawable.list));
-            plusButton.setImageDrawable(getResources().getDrawable(R.drawable.plus));
-            searchButton.setImageDrawable(getResources().getDrawable(R.drawable.search_act));
-            peopleButton.setImageDrawable(getResources().getDrawable(R.drawable.people));
-
-            listButtonText.setVisibility(View.INVISIBLE);
-            plusButtonText.setVisibility(View.INVISIBLE);
-            searchButtonText.setVisibility(View.VISIBLE);
-            peopleButtonText.setVisibility(View.INVISIBLE);
+            binding.mainButtonText.setVisibility(View.INVISIBLE);
+            binding.addButtonText.setVisibility(View.VISIBLE);
+            binding.searchButtonText.setVisibility(View.INVISIBLE);
+            binding.myPageButtonText.setVisibility(View.INVISIBLE);
 
             FragmentManager fragmentManager = getSupportFragmentManager();
 
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-            fragmentTransaction.replace(R.id.fragmentMain, new SearchFragment());
+            fragmentTransaction.replace(R.id.fragment, new AddFragment());
+            fragmentTransaction.commit();
+        });
+    }
+
+    private void clickSearchButton() {
+
+        binding.searchButton.setOnClickListener(v -> {
+
+            binding.mainButton.setImageDrawable(getResources().getDrawable(R.drawable.main));
+            binding.addButton.setImageDrawable(getResources().getDrawable(R.drawable.add));
+            binding.searchButton.setImageDrawable(getResources().getDrawable(R.drawable.search_act));
+            binding.myPageButton.setImageDrawable(getResources().getDrawable(R.drawable.myPage));
+
+            binding.mainButtonText.setVisibility(View.INVISIBLE);
+            binding.addButtonText.setVisibility(View.INVISIBLE);
+            binding.searchButtonText.setVisibility(View.VISIBLE);
+            binding.myPageButtonText.setVisibility(View.INVISIBLE);
+
+            FragmentManager fragmentManager = getSupportFragmentManager();
+
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+            fragmentTransaction.replace(R.id.fragment, new SearchFragment());
             fragmentTransaction.commit();
         });
     }
 
     private void clickMyPageButton() {
 
-        peopleButton.setOnClickListener(v -> {
+        binding.myPageButton.setOnClickListener(v -> {
 
-            listButton.setImageDrawable(getResources().getDrawable(R.drawable.list));
-            plusButton.setImageDrawable(getResources().getDrawable(R.drawable.plus));
-            searchButton.setImageDrawable(getResources().getDrawable(R.drawable.search));
-            peopleButton.setImageDrawable(getResources().getDrawable(R.drawable.people_act));
+            binding.mainButton.setImageDrawable(getResources().getDrawable(R.drawable.main));
+            binding.addButton.setImageDrawable(getResources().getDrawable(R.drawable.add));
+            binding.searchButton.setImageDrawable(getResources().getDrawable(R.drawable.search));
+            binding.myPageButton.setImageDrawable(getResources().getDrawable(R.drawable.myPage_act));
 
-            listButtonText.setVisibility(View.INVISIBLE);
-            plusButtonText.setVisibility(View.INVISIBLE);
-            searchButtonText.setVisibility(View.INVISIBLE);
-            peopleButtonText.setVisibility(View.VISIBLE);
+            binding.mainButtonText.setVisibility(View.INVISIBLE);
+            binding.addButtonText.setVisibility(View.INVISIBLE);
+            binding.searchButtonText.setVisibility(View.INVISIBLE);
+            binding.myPageButtonText.setVisibility(View.VISIBLE);
 
             FragmentManager fragmentManager = getSupportFragmentManager();
 
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-            fragmentTransaction.replace(R.id.fragmentMain, new MyPageFragment());
+            fragmentTransaction.replace(R.id.fragment, new MyPageFragment());
             fragmentTransaction.commit();
         });
     }

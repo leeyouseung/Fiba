@@ -50,7 +50,7 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
-                    app:srcCompat="@drawable/list_act"
+                    app:srcCompat="@drawable/main_act"
                     tools:ignore="ContentDescription" />
 
                 <TextView
@@ -78,7 +78,7 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
-                    android:background="@drawable/plus"
+                    android:background="@drawable/add"
                     tools:ignore="ContentDescription" />
 
                 <TextView
@@ -134,7 +134,7 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
-                    app:srcCompat="@drawable/people"
+                    app:srcCompat="@drawable/myPage"
                     tools:ignore="ContentDescription" />
 
                 <TextView
