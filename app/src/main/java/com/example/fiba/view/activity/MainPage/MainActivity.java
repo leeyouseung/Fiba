@@ -5,7 +5,6 @@ import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -54,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             binding.mainButton.setImageDrawable(getResources().getDrawable(R.drawable.main_act));
             binding.addButton.setImageDrawable(getResources().getDrawable(R.drawable.add));
             binding.searchButton.setImageDrawable(getResources().getDrawable(R.drawable.search));
-            binding.myPageButton.setImageDrawable(getResources().getDrawable(R.drawable.myPage));
+            binding.myPageButton.setImageDrawable(getResources().getDrawable(R.drawable.mypage));
 
             binding.mainButtonText.setVisibility(View.VISIBLE);
             binding.addButtonText.setVisibility(View.INVISIBLE);
@@ -77,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
             binding.mainButton.setImageDrawable(getResources().getDrawable(R.drawable.main));
             binding.addButton.setImageDrawable(getResources().getDrawable(R.drawable.add_act));
             binding.searchButton.setImageDrawable(getResources().getDrawable(R.drawable.search));
-            binding.myPageButton.setImageDrawable(getResources().getDrawable(R.drawable.myPage));
+            binding.myPageButton.setImageDrawable(getResources().getDrawable(R.drawable.mypage));
 
             binding.mainButtonText.setVisibility(View.INVISIBLE);
             binding.addButtonText.setVisibility(View.VISIBLE);
@@ -100,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
             binding.mainButton.setImageDrawable(getResources().getDrawable(R.drawable.main));
             binding.addButton.setImageDrawable(getResources().getDrawable(R.drawable.add));
             binding.searchButton.setImageDrawable(getResources().getDrawable(R.drawable.search_act));
-            binding.myPageButton.setImageDrawable(getResources().getDrawable(R.drawable.myPage));
+            binding.myPageButton.setImageDrawable(getResources().getDrawable(R.drawable.mypage));
 
             binding.mainButtonText.setVisibility(View.INVISIBLE);
             binding.addButtonText.setVisibility(View.INVISIBLE);
@@ -123,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
             binding.mainButton.setImageDrawable(getResources().getDrawable(R.drawable.main));
             binding.addButton.setImageDrawable(getResources().getDrawable(R.drawable.add));
             binding.searchButton.setImageDrawable(getResources().getDrawable(R.drawable.search));
-            binding.myPageButton.setImageDrawable(getResources().getDrawable(R.drawable.myPage_act));
+            binding.myPageButton.setImageDrawable(getResources().getDrawable(R.drawable.mypage_act));
 
             binding.mainButtonText.setVisibility(View.INVISIBLE);
             binding.addButtonText.setVisibility(View.INVISIBLE);
