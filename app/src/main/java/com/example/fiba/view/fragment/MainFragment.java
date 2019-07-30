@@ -105,7 +105,6 @@ public class MainFragment extends Fragment {
 
     private void clickEvent() {
 
-        
     }
 
     //--------------------------------------------------------------------

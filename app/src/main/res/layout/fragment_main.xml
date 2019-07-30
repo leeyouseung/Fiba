@@ -3,17 +3,87 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" >
 
-<FrameLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".view.fragment.MainFragment">
-
-    <TextView
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="MAIN FRAGMENT"
-        tools:ignore="HardcodedText" />
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".Page.fragment.MainPageFragment">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"
+            android:text="내 주변 실종아동"
+            android:textSize="10pt"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="HardcodedText" />
+
+        <ImageView
+            android:id="@+id/titleBar"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/title_color_box"
+            tools:ignore="ContentDescription" />
+
+        <FrameLayout
+            android:layout_width="395dp"
+            android:layout_height="440dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleBar"
+            tools:ignore="UselessLeaf">
+
+            <RelativeLayout
+                android:id="@+id/fragment"
+                android:layout_width="match_parent"
+                android:layout_height="440dp">
+
+            </RelativeLayout>
+
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/changeFindButton"
+            android:layout_width="85dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="300dp"
+            android:text="실종 아동"
+            android:textStyle="bold"
+            android:background="@drawable/find_button_radius"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleBar"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/changeProtectButton"
+            android:layout_width="85dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="300dp"
+            android:background="@drawable/protect_button_radius"
+            android:clickable="false"
+            android:text="보호 아동"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleBar"
+            tools:ignore="HardcodedText" />
+
+    </FrameLayout>
 
 </layout>
