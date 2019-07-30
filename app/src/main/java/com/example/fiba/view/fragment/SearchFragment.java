@@ -4,6 +4,8 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -11,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.fiba.R;
+import com.example.fiba.databinding.FragmentSearchBinding;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,6 +24,13 @@ import com.example.fiba.R;
  * create an instance of this fragment.
  */
 public class SearchFragment extends Fragment {
+
+    //--------------------------------------------------------------------
+
+    FragmentSearchBinding binding;
+
+    //--------------------------------------------------------------------
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -67,24 +77,42 @@ public class SearchFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_search, container, false);
+
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_search, container, false);
+
+        return binding.getRoot();
     }
+
+    //--------------------------------------------------------------------
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        initData();
+
+        event();
+    }
+
+    private void initData() {
+
+    }
+
+    private void event() {
+
+        clickEvent();
+    }
+
+    private void clickEvent() {
+
+    }
+
+    //--------------------------------------------------------------------
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
-        }
-    }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
         }
     }
 
