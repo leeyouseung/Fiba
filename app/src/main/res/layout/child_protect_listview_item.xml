@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginBottom="10dp"
+    android:background="@drawable/list_shadow"
+    android:layout_width="match_parent"
+    android:layout_height="180dp">
+
+    <ImageView
+        android:id="@+id/childPhoto"
+        android:layout_width="120dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/child_image_protect"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/childName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="42dp"
+        android:text="김성헌"
+        android:textColor="@color/black"
+        android:textSize="9pt"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/childPhoto"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/bar1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="42dp"
+        android:text="("
+        android:textColor="@color/black"
+        android:textSize="9pt"
+        app:layout_constraintStart_toEndOf="@+id/childName"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/childSex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="42dp"
+        android:text="남"
+        android:textColor="@color/black"
+        android:textSize="9pt"
+        app:layout_constraintStart_toEndOf="@+id/bar1"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/dot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="42dp"
+        android:text=","
+        android:textColor="@color/black"
+        android:textSize="9pt"
+        app:layout_constraintStart_toEndOf="@+id/childSex"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/childAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="42dp"
+        android:text="17"
+        android:textColor="@color/black"
+        android:textSize="9pt"
+        app:layout_constraintStart_toEndOf="@+id/dot"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/bar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="42dp"
+        android:text=")"
+        android:textColor="@color/black"
+        android:textSize="9pt"
+        app:layout_constraintStart_toEndOf="@+id/childAge"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/childPlace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="18dp"
+        android:text="대구소프트웨어고 후문"
+        app:layout_constraintStart_toEndOf="@+id/pin"
+        app:layout_constraintTop_toBottomOf="@+id/childName"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/childHeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:text="170cm"
+        app:layout_constraintStart_toEndOf="@+id/childPhoto"
+        app:layout_constraintTop_toBottomOf="@+id/childPlace"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/childWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="60kg"
+        app:layout_constraintStart_toEndOf="@+id/childHeight"
+        app:layout_constraintTop_toBottomOf="@+id/childPlace"
+        tools:ignore="HardcodedText" />
+
+    <ImageView
+        android:id="@+id/pin"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/childHeight"
+        app:layout_constraintStart_toEndOf="@+id/childPhoto"
+        app:layout_constraintTop_toBottomOf="@+id/childName"
+        app:srcCompat="@drawable/pin"
+        tools:ignore="ContentDescription" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

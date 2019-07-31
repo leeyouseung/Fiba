@@ -1,18 +1,32 @@
 package com.example.fiba.adapter;
 
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fiba.R;
+import com.example.fiba.data.FindChild;
+
+import java.util.ArrayList;
 
 public class FindRecyclerviewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    public FindRecyclerviewAdapter() {
+    interface OnItemClickListener {
 
+        void onItemClick(View view, int position);
     }
+
+    OnItemClickListener onItemClickListener;
+
+    public FindRecyclerviewAdapter(OnItemClickListener listener) {
+
+        onItemClickListener = listener;
+    }
+
+    private ArrayList<FindChild> listData = new ArrayList<>();
 
     @NonNull
     @Override
