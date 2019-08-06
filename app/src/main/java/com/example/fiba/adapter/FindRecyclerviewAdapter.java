@@ -12,7 +12,7 @@ import com.example.fiba.data.FindChild;
 
 import java.util.ArrayList;
 
-public class FindRecyclerviewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class FindRecyclerviewAdapter extends RecyclerView.Adapter<FindRecyclerviewAdapter.ViewHolder> {
 
     interface OnItemClickListener {
 
@@ -30,15 +30,15 @@ public class FindRecyclerviewAdapter extends RecyclerView.Adapter<RecyclerView.V
 
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-       //view = LayoutInflater.from(parent.getContext()).inflate(R.layout.something, parent, false);
+       View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.child_find_listview_item, parent, false);
 
-        return null;
+        return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
     }
 
@@ -46,5 +46,14 @@ public class FindRecyclerviewAdapter extends RecyclerView.Adapter<RecyclerView.V
     public int getItemCount() {
 
         return 0;
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
+
+
+
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+        }
     }
 }
