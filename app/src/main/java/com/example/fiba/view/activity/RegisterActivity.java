@@ -1,4 +1,4 @@
-package com.example.fiba.view.activity.login.registerPage;
+package com.example.fiba.view.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;

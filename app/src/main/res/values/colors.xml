@@ -9,4 +9,8 @@
     <color name="list_shadow">#0D000000</color>
     <color name="find_button">#FFDCDC</color>
     <color name="protect_button">#DEE0FF</color>
+    <color name="login_button_first_gradation">#FF72FB</color>
+    <color name="login_button_end_gradation">#FF3399</color>
+    <color name="background_color">#EFEFEF</color>
+    <!--8977AD //연보라 -->
 </resources>

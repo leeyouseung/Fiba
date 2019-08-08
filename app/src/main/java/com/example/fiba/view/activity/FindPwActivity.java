@@ -1,4 +1,4 @@
-package com.example.fiba.view.activity.findPage;
+package com.example.fiba.view.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 

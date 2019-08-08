@@ -1,36 +1,40 @@
-package com.example.fiba.view.activity.login.registerPage;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
+package com.example.fiba.view.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Toast;
 
 import com.example.fiba.R;
+import com.example.fiba.base.BaseActivity;
 import com.example.fiba.databinding.ActivityLoginBinding;
-import com.example.fiba.view.activity.MainPage.MainActivity;
-import com.example.fiba.view.activity.findPage.FindIdActivity;
-import com.example.fiba.view.activity.findPage.FindPwActivity;
 
-public class LoginActivity extends AppCompatActivity {
-
-    ActivityLoginBinding binding;
+public class LoginActivity extends BaseActivity<ActivityLoginBinding> {
 
     Intent intent;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected int layoutId() {
+
+        return R.layout.activity_login;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        initData();
+        fadeOutAnimation();
 
         event();
     }
 
-    private void initData() {
+    private void fadeOutAnimation() {
 
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_login);
+        overridePendingTransition(0,0);
+        Animation animation = AnimationUtils.loadAnimation(this, android.R.anim.fade_in);
+
+        binding.loginContainer.startAnimation(animation);
     }
 
     private void event() {
