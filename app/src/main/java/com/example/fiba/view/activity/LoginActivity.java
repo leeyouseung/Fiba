@@ -12,11 +12,11 @@ import com.example.fiba.R;
 import com.example.fiba.base.BaseActivity;
 import com.example.fiba.databinding.ActivityLoginBinding;
 import com.example.fiba.network.request.LoginRequest;
-import com.example.fiba.viewmodel.LoginViewModel;
+//import com.example.fiba.viewmodel.LoginViewModel;
 
 public class LoginActivity extends BaseActivity<ActivityLoginBinding> {
 
-    private LoginViewModel loginViewModel;
+//    private LoginViewModel loginViewModel;
 
     Intent intent;
 
@@ -77,7 +77,7 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding> {
                 return;
             }
 
-            loginViewModel.login(new LoginRequest(binding.idText.getText().toString(), binding.pwText.getText().toString()));
+//            loginViewModel.login(new LoginRequest(binding.idText.getText().toString(), binding.pwText.getText().toString()));
         });
     }
 
