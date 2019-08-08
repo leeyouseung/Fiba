@@ -2,6 +2,8 @@ package com.example.fiba.view.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Toast;
@@ -9,10 +11,16 @@ import android.widget.Toast;
 import com.example.fiba.R;
 import com.example.fiba.base.BaseActivity;
 import com.example.fiba.databinding.ActivityLoginBinding;
+import com.example.fiba.network.request.LoginRequest;
+import com.example.fiba.viewmodel.LoginViewModel;
 
 public class LoginActivity extends BaseActivity<ActivityLoginBinding> {
 
+    private LoginViewModel loginViewModel;
+
     Intent intent;
+
+    private boolean checkBlind = false;
 
     @Override
     protected int layoutId() {
@@ -48,16 +56,28 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding> {
         clickFindIdButton();
         clickFindPwButton();
         clickRegisterButton();
+        clickPasswordClearButton();
+        clickPasswordBlindButton();
     }
 
     private void clickLoginButton() {
 
         binding.loginButton.setOnClickListener(v -> {
 
-            Toast.makeText(getApplicationContext(), "잠시만 기다려주세요", Toast.LENGTH_SHORT).show();
+            if (binding.idText.getText().toString().isEmpty()) {
 
-            intent = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(intent);
+                Toast.makeText(this,"아이디를 입력해 주세요",Toast.LENGTH_SHORT).show();
+
+                return;
+            }
+            if (binding.pwText.getText().toString().isEmpty()) {
+
+                Toast.makeText(this,"비밀번호를 입력해 주세요",Toast.LENGTH_SHORT).show();
+
+                return;
+            }
+
+            loginViewModel.login(new LoginRequest(binding.idText.getText().toString(), binding.pwText.getText().toString()));
         });
     }
 
@@ -91,6 +111,32 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding> {
 
             intent = new Intent(getApplicationContext(), RegisterActivity.class);
             startActivity(intent);
+        });
+    }
+
+    private void clickPasswordClearButton() {
+
+        binding.clear.setOnClickListener(v -> binding.pwText.setText(""));
+    }
+
+    private void clickPasswordBlindButton() {
+
+        binding.blind.setOnClickListener(v -> {
+
+            if (checkBlind) {
+
+                binding.blind.setImageResource(R.drawable.ic_blind);
+                binding.pwText.setTransformationMethod(PasswordTransformationMethod.getInstance());
+
+                checkBlind = false;
+            }
+            else {
+
+                binding.blind.setImageResource(R.drawable.ic_blind_check);
+                binding.pwText.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+
+                checkBlind = true;
+            }
         });
     }
 }

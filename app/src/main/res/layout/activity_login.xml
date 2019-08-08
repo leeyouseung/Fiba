@@ -41,9 +41,9 @@
             android:id="@+id/idText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="30dp"
             android:hint="ID"
             android:inputType="textPersonName"
             android:paddingStart="8dp"
@@ -57,9 +57,9 @@
             android:id="@+id/pwText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="30dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginEnd="30dp"
             android:ems="18"
             android:hint="Password"
             android:inputType="textPassword"
@@ -70,11 +70,33 @@
             app:layout_constraintTop_toBottomOf="@+id/idText"
             tools:ignore="Autofill,HardcodedText,RtlSymmetry" />
 
+        <ImageView
+            android:id="@+id/clear"
+            android:layout_width="15dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/ic_clear_btn"
+            app:layout_constraintBottom_toBottomOf="@+id/pwText"
+            app:layout_constraintEnd_toStartOf="@+id/blind"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/blind"
+            android:layout_width="25dp"
+            android:layout_height="15dp"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/ic_blind"
+            app:layout_constraintBottom_toBottomOf="@+id/clear"
+            app:layout_constraintEnd_toEndOf="@+id/pwText"
+            app:layout_constraintTop_toTopOf="@+id/clear"
+            tools:ignore="ContentDescription" />
+
         <CheckBox
             android:id="@+id/keepLoginButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="56dp"
+            android:layout_marginStart="30dp"
             android:layout_marginTop="16dp"
             android:text="로그인 유지"
             app:layout_constraintStart_toStartOf="parent"
