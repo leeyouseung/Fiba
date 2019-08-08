@@ -26,6 +26,7 @@ public class SplashActivity extends BaseActivity<SplashActivityBinding> {
 
             @Override
             public void onAnimationEnd(Animation animation) {
+
                 binding.logo.clearAnimation();
                 binding.logo.startAnimation(scale);
             }

@@ -11,6 +11,6 @@ public class FindPwActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_find_pw);
+        setContentView(R.layout.find_pw_activity);
     }
 }
