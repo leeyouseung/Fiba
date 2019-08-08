@@ -1,4 +1,4 @@
-package com.example.fiba.adapter;
+package com.example.fiba.widget.recyclerview.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
