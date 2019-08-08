@@ -25,12 +25,24 @@ public class MainActivity extends AppCompatActivity {
 
         initData();
 
+        setting();
+
         event();
     }
 
     private void initData() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+    }
+
+    private void setting() {
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        fragmentTransaction.replace(R.id.fragment, new MainFragment());
+        fragmentTransaction.commit();
     }
 
     private void event() {
