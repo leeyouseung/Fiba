@@ -13,23 +13,23 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.fiba.R;
-import com.example.fiba.databinding.FragmentMainBinding;
+import com.example.fiba.databinding.FragmentMainFindBinding;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link MainFragment.OnFragmentInteractionListener} interface
+ * {@link MainFindFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link MainFragment#newInstance} factory method to
+ * Use the {@link MainFindFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class MainFragment extends Fragment {
+public class MainFindFragment extends Fragment {
 
-    //--------------------------------------------------------------------
+    //-----------------------------------------------
 
-    FragmentMainBinding binding;
+    FragmentMainFindBinding binding;
 
-    //--------------------------------------------------------------------
+    //-----------------------------------------------
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -42,7 +42,7 @@ public class MainFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public MainFragment() {
+    public MainFindFragment() {
         // Required empty public constructor
     }
 
@@ -52,11 +52,11 @@ public class MainFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment MainFragment.
+     * @return A new instance of fragment MainFindFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static MainFragment newInstance(String param1, String param2) {
-        MainFragment fragment = new MainFragment();
+    public static MainFindFragment newInstance(String param1, String param2) {
+        MainFindFragment fragment = new MainFindFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -78,36 +78,21 @@ public class MainFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_main, container, false);
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_main_find, container, false);
 
         return binding.getRoot();
     }
 
-    //--------------------------------------------------------------------
+    //-----------------------------------------------
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        initData();
-
-        event();
-    }
-
-    private void initData() {
 
     }
 
-    private void event() {
-
-        clickEvent();
-    }
-
-    private void clickEvent() {
-
-    }
-
-    //--------------------------------------------------------------------
+    //-----------------------------------------------
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
