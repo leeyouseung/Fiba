@@ -77,6 +77,8 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding> {
                 return;
             }
 
+            intent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent);
 //            loginViewModel.login(new LoginRequest(binding.idText.getText().toString(), binding.pwText.getText().toString()));
         });
     }

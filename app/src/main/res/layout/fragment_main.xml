@@ -48,9 +48,9 @@
             tools:ignore="UselessLeaf">
 
             <RelativeLayout
-                android:id="@+id/fragment"
+                android:id="@+id/recyclerview_main_find"
                 android:layout_width="match_parent"
-                android:layout_height="440dp">
+                android:layout_height="match_parent">
 
             </RelativeLayout>
 
