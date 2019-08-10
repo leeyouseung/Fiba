@@ -8,7 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fiba.R;
-import com.example.fiba.data.FindChild;
+import com.example.fiba.model.FindChild;
 
 import java.util.ArrayList;
 
