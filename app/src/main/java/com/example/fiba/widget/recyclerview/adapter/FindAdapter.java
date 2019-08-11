@@ -1,8 +1,5 @@
 package com.example.fiba.widget.recyclerview.adapter;
 
-import android.content.Context;
-import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,43 +12,49 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.fiba.R;
 import com.example.fiba.databinding.ChildFindListviewItemBinding;
 import com.example.fiba.model.FindChild;
-import com.example.fiba.view.activity.MainActivity;
-import com.example.fiba.widget.recyclerview.viewholder.FindViewHolder;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class FindAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class FindAdapter extends RecyclerView.Adapter<FindAdapter.ItemViewHolder> {
 
     ChildFindListviewItemBinding binding;
 
-    private List<FindChild> listData;
+    private List<FindChild> listData = new ArrayList<>();
 
-    Context context;
+    interface OnItemClickListener {
 
-    MainActivity view;
+        void onItemClick(View view, int position);
+    }
 
-    public FindAdapter(List<FindChild> listData, Context context, MainActivity view) {
+    OnItemClickListener onItemClickListener;
 
-        this.listData = listData;
-        this.context = context;
-        this.view = view;
+    public void setOnItemClickListener(OnItemClickListener listener) {
+
+        onItemClickListener = listener;
     }
 
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
+    public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
 
-        return new FindViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.child_find_listview_item, parent, false));
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.child_find_listview_item, viewGroup, false);
+
+        return new ItemViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder itemViewHolder, int position) {
+    public void onBindViewHolder(@NonNull ItemViewHolder itemViewHolder, int position) {
 
-        Log.d("LogPosition", "position = " + position);
+        itemViewHolder.onBind(listData.get(position));
 
-        FindChild findChild = listData.get(position);
+        itemViewHolder.itemView.setOnClickListener(v -> {
 
-        populateItemRows((FindViewHolder) itemViewHolder, findChild);
+            if(onItemClickListener != null) {
+
+                onItemClickListener.onItemClick(itemViewHolder.itemView, position);
+            }
+        });
     }
 
     @Override
@@ -60,26 +63,42 @@ public class FindAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         return listData.size();
     }
 
-    private void populateItemRows(FindViewHolder viewHolder, FindChild findChild) {
+    void addItem(FindChild findChild) {
 
-//        viewHolder.binding.studyTitle.setText(findChild.getTitle());
-//        viewHolder.binding.currentPerson.setText(findChild.getCurrentPerson().toString() + " / ");
-//        viewHolder.binding.personnel.setText(findChild.getPersonnel().toString());
-//        viewHolder.binding.studyPlace.setText(findChild.getLocation());
-//        viewHolder.binding.studyTime.setText(findChild.getStartTerm().split(" ")[0] + " ~ " + study.getEndTerm().split(" ")[0]);
-//
-//        if (!findChild.getImgs().isEmpty()) {
-//
-//            Glide.with(view).load(findChild.getImgs().get(0)).into(viewHolder.binding.studyImageview);
-//        }
-//
-//        viewHolder.binding.studyCardView.setOnClickListener(v -> {
-//
-//            Intent intent = new Intent(context, StudyActivity.class);
-//
-//            intent.putExtra("study", findChild);
-//
-//            context.startActivity(intent);
-//        });
+        listData.add(findChild);
+    }
+
+    public class ItemViewHolder extends RecyclerView.ViewHolder {
+
+        private ImageView childPhoto;
+        private TextView childName;
+        private TextView childAge;
+        private TextView childSex;
+        private TextView childHeight;
+        private TextView childWeight;
+        private TextView place;
+
+        public ItemViewHolder(@NonNull View itemView) {
+            super(itemView);
+
+            childName = binding.childName;
+            childAge = binding.childAge;
+            childSex = binding.childSex;
+            place = binding.childPlace;
+            childHeight = binding.childHeight;
+            childWeight = binding.childWeight;
+            childPhoto = binding.childPhoto;
+        }
+
+        void onBind(FindChild findChild) {
+
+            childName.setText(findChild.getChildName());
+            childAge.setText(findChild.getChildAge());
+            childSex.setText(findChild.getChildSex());
+            place.setText(findChild.getChildPlace());
+            childHeight.setText(findChild.getChildHeight());
+            childWeight.setText(findChild.getChildWeight());
+            childPhoto.setImageResource(R.drawable.child_image_find);
+        }
     }
 }

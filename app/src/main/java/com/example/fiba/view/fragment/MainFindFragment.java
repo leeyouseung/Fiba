@@ -6,6 +6,8 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +15,12 @@ import android.view.ViewGroup;
 
 import com.example.fiba.R;
 import com.example.fiba.databinding.FragmentMainFindBinding;
+import com.example.fiba.model.FindChild;
 import com.example.fiba.widget.recyclerview.adapter.FindAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -28,6 +35,8 @@ public class MainFindFragment extends Fragment {
     //-----------------------------------------------
 
     FragmentMainFindBinding binding;
+
+    private List<FindChild> findChildList = new ArrayList<>();
 
     //-----------------------------------------------
 
@@ -91,11 +100,41 @@ public class MainFindFragment extends Fragment {
 
         initData();
 
+        getData();
+
         event();
     }
 
     private void initData() {
 
+        RecyclerView recyclerView = Objects.requireNonNull(getView()).findViewById(R.id.recyclerview_main_find);
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(Objects.requireNonNull(getContext()).getApplicationContext());
+        recyclerView.setLayoutManager(linearLayoutManager);
+
+        FindAdapter findAdapter = new FindAdapter();
+
+//        findAdapter.setOnItemClickListener();    error
+
+        recyclerView.setAdapter(findAdapter);
+    }
+
+    private void getData() {
+
+//        List<String> listTitle = new ArrayList<>();
+//
+//        listTitle.add(title);
+//
+//        for(int i=0;i<listTitle.size();i++) {
+//
+//            FindChild findChild = new FindChild();
+//
+//            data.setTitle(listTitle.get(i));
+//
+//            recyclerviewAdapter.addItem(data);
+//        }
+//
+//        recyclerviewAdapter.notifyDataSetChanged();
     }
 
     private void event() {
