@@ -146,10 +146,4 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
             fragmentTransaction.commit();
         });
     }
-
-    @Override
-    public void onItemClick(View view, int position) {
-
-        Toast.makeText(MainActivity.this, "" + position, Toast.LENGTH_SHORT).show();
-    }
 }

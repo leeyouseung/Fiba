@@ -23,7 +23,7 @@ import com.example.fiba.widget.recyclerview.adapter.FindAdapter;
  * Use the {@link MainFindFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class MainFindFragment extends Fragment implements FindAdapter.OnItemClickListener {
+public class MainFindFragment extends Fragment {
 
     //-----------------------------------------------
 
@@ -120,11 +120,6 @@ public class MainFindFragment extends Fragment implements FindAdapter.OnItemClic
     public void onDetach() {
         super.onDetach();
         mListener = null;
-    }
-
-    @Override
-    public void onItemClick(View view, int position) {
-
     }
 
     /**
