@@ -1,14 +1,11 @@
 package com.example.fiba.view.fragment;
 
-import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +13,7 @@ import android.view.ViewGroup;
 
 import com.example.fiba.R;
 import com.example.fiba.databinding.FragmentMainFindBinding;
+import com.example.fiba.widget.recyclerview.adapter.FindAdapter;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,7 +23,7 @@ import com.example.fiba.databinding.FragmentMainFindBinding;
  * Use the {@link MainFindFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class MainFindFragment extends Fragment {
+public class MainFindFragment extends Fragment implements FindAdapter.OnItemClickListener {
 
     //-----------------------------------------------
 
@@ -122,6 +120,11 @@ public class MainFindFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onItemClick(View view, int position) {
+
     }
 
     /**

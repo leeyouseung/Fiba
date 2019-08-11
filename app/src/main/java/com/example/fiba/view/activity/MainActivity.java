@@ -1,12 +1,11 @@
 package com.example.fiba.view.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.fiba.R;
 import com.example.fiba.base.BaseActivity;
@@ -146,5 +145,11 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
             fragmentTransaction.replace(R.id.fragment, new MyPageFragment());
             fragmentTransaction.commit();
         });
+    }
+
+    @Override
+    public void onItemClick(View view, int position) {
+
+        Toast.makeText(MainActivity.this, "" + position, Toast.LENGTH_SHORT).show();
     }
 }
