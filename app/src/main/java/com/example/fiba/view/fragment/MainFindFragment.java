@@ -114,7 +114,7 @@ public class MainFindFragment extends Fragment {
 
         FindAdapter findAdapter = new FindAdapter();
 
-//        findAdapter.setOnItemClickListener();    error
+//        findAdapter.setOnItemClickListener();    error 
 
         recyclerView.setAdapter(findAdapter);
     }
