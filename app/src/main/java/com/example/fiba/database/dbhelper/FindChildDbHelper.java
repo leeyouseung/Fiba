@@ -14,7 +14,7 @@ public class FindChildDbHelper extends SQLiteOpenHelper {
     private static final String DB_NAME = "FindChild.db";
 
     private static final String SQL_FIND_CHILD_CREATE_ENTRIES =
-            String.format("CREATE TABLE %s (%s INTEGER PRIMARY KEY AUTOINCREMENT, %s TEXT, %s TEXT)",
+            String.format("CREATE TABLE %s (%s INTEGER PRIMARY KEY AUTOINCREMENT, %s TEXT, %s TEXT, %s TEXT, %s TEXT, %s TEXT, %s TEXT)",
                     FindChildDbColumns.FindChildEntry.TABLE_NAME,
                     FindChildDbColumns.FindChildEntry._ID,
                     FindChildDbColumns.FindChildEntry.CLUAMN_NAME_FIND_CHILD_NAME,
@@ -23,6 +23,9 @@ public class FindChildDbHelper extends SQLiteOpenHelper {
                     FindChildDbColumns.FindChildEntry.CLUAMN_NAME_LOST_PLACE,
                     FindChildDbColumns.FindChildEntry.CLUAMN_NAME_FIND_CHILD_HEIGHT,
                     FindChildDbColumns.FindChildEntry.CLUAMN_NAME_FIND_CHILD_WEIGHT );
+
+    private static final String SQL_FIND_CHILD_DELETE_ENTRIES =
+            String.format("DROP TABLE IF EXISTS " + FindChildDbColumns.FindChildEntry.TABLE_NAME);
 
     public static FindChildDbHelper getInstance(Context context) {
 
@@ -37,16 +40,19 @@ public class FindChildDbHelper extends SQLiteOpenHelper {
     private FindChildDbHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
 
-
     }
 
     @Override
-    public void onCreate(SQLiteDatabase sqLiteDatabase) {
+    public void onCreate(SQLiteDatabase db) {
 
+        db.execSQL(SQL_FIND_CHILD_CREATE_ENTRIES);
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
+        db.execSQL(SQL_FIND_CHILD_DELETE_ENTRIES);
+
+        onCreate(db);
     }
 }
