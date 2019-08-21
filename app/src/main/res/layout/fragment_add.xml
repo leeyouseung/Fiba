@@ -11,12 +11,11 @@
     <ScrollView android:layout_width="match_parent"
         android:layout_height="match_parent"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        xmlns:android="http://schemas.android.com/apk/res/android">
+        tools:ignore="UselessParent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
 
@@ -94,7 +93,7 @@
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="10dp"
                 android:text="이름"
-                android:textColor="#000"
+                android:textColor="@color/black"
                 android:textSize="8pt"
                 app:layout_constraintStart_toEndOf="@+id/add_child_image"
                 app:layout_constraintTop_toTopOf="@+id/add_child_image"
@@ -108,9 +107,10 @@
                 android:layout_marginTop="12dp"
                 android:background="@drawable/text_border_gray"
                 android:hint="입력"
+                android:paddingStart="4dp"
                 app:layout_constraintStart_toEndOf="@+id/add_child_image"
                 app:layout_constraintTop_toBottomOf="@+id/nameTitle"
-                tools:ignore="Autofill,HardcodedText,MissingConstraints,TextFields" />
+                tools:ignore="Autofill,HardcodedText,MissingConstraints,RtlSymmetry,TextFields" />
 
             <TextView
                 android:id="@+id/ageText"
@@ -119,7 +119,7 @@
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="16dp"
                 android:text="나이"
-                android:textColor="#000"
+                android:textColor="@color/black"
                 android:textSize="8pt"
                 app:layout_constraintStart_toEndOf="@+id/add_child_image"
                 app:layout_constraintTop_toBottomOf="@+id/add_child_nameText"
@@ -142,7 +142,7 @@
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="16dp"
                 android:text="성별"
-                android:textColor="#000"
+                android:textColor="@color/black"
                 android:textSize="8pt"
                 app:layout_constraintStart_toEndOf="@+id/ageText"
                 app:layout_constraintTop_toBottomOf="@+id/add_child_nameText"
@@ -181,7 +181,7 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="48dp"
                 android:text="보호자 전화번호"
-                android:textColor="#000"
+                android:textColor="@color/black"
                 android:textSize="8pt"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/add_child_image"
@@ -195,9 +195,11 @@
                 android:layout_marginTop="12dp"
                 android:background="@drawable/text_border_gray"
                 android:importantForAutofill="no"
+                android:hint="010-XXXX-XXXX"
+                android:paddingStart="4dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/phoneText"
-                tools:ignore="LabelFor,MissingConstraints,TextFields" />
+                tools:ignore="HardcodedText,LabelFor,MissingConstraints,TextFields" />
 
             <Button
                 android:id="@+id/confirmAdd"
@@ -220,7 +222,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="실종 위치"
-                android:textColor="#000"
+                android:textColor="@color/black"
                 android:textSize="8pt"
                 app:layout_constraintEnd_toEndOf="@+id/heightAndWeight"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -237,11 +239,11 @@
                 android:layout_marginEnd="30dp"
                 android:background="@drawable/text_border_gray"
                 android:hint="입력"
-                android:textColor="#000"
+                android:paddingStart="4dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/placeText"
-                tools:ignore="Autofill,HardcodedText,LabelFor,MissingConstraints,TextFields" />
+                tools:ignore="Autofill,HardcodedText,LabelFor,MissingConstraints,RtlSymmetry,TextFields" />
 
             <TextView
                 android:id="@+id/contentsText"
@@ -249,7 +251,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:text="상세 내용"
-                android:textColor="#000"
+                android:textColor="@color/black"
                 android:textSize="8pt"
                 app:layout_constraintEnd_toEndOf="@+id/missingLocation"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -264,12 +266,13 @@
                 android:layout_marginTop="12dp"
                 android:background="@drawable/text_border_gray"
                 android:hint="신체 특징, 실종 시간 등을 작성"
-                android:textColor="#000"
+                android:textColor="@color/black"
+                android:paddingStart="4dp"
                 app:layout_constraintEnd_toEndOf="@+id/contentsText"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/contentsText"
                 app:layout_constraintTop_toBottomOf="@+id/contentsText"
-                tools:ignore="Autofill,HardcodedText,MissingConstraints,TextFields" />
+                tools:ignore="Autofill,HardcodedText,MissingConstraints,RtlSymmetry,TextFields" />
 
             <TextView
                 android:id="@+id/heightAndWeight"
@@ -277,7 +280,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="몸무게 / 키 "
-                android:textColor="#000"
+                android:textColor="@color/black"
                 android:textSize="8pt"
                 app:layout_constraintEnd_toEndOf="@+id/parentPhoneNumber"
                 app:layout_constraintHorizontal_bias="0.0"
