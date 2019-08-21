@@ -47,8 +47,6 @@ public class MainFindFragment extends Fragment {
 
     private FindChildViewModel findChildViewModel;
 
-    private List<FindChild> findChildList = new ArrayList<>();
-
     //-----------------------------------------------
 
     // TODO: Rename parameter arguments, choose names that match
