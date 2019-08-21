@@ -9,6 +9,7 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
+import com.example.fiba.R;
 import com.example.fiba.database.db_api.FindChildDao;
 import com.example.fiba.model.FindChild;
 
@@ -53,7 +54,8 @@ public abstract class FindChildDatabase extends RoomDatabase {
         @Override
         protected Void doInBackground(Void... voids) {
 
-//            findChildDao.insert(new FindChild()); start coding
+            findChildDao.insert(new FindChild(R.drawable.child_image_find, "이재민", "남",
+                    "대구소프트웨어고등학교 정문", "18", "160", "50"));
 
             return null;
         }

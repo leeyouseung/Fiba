@@ -16,7 +16,7 @@ import android.view.ViewGroup;
 import com.example.fiba.R;
 import com.example.fiba.databinding.FragmentMainFindBinding;
 import com.example.fiba.model.FindChild;
-import com.example.fiba.widget.recyclerview.adapter.FindAdapter;
+import com.example.fiba.widget.recyclerview.adapter.FindChildAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -112,7 +112,7 @@ public class MainFindFragment extends Fragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(Objects.requireNonNull(getContext()).getApplicationContext());
         recyclerView.setLayoutManager(linearLayoutManager);
 
-        FindAdapter findAdapter = new FindAdapter();
+        FindChildAdapter findAdapter = new FindChildAdapter();
 
 //        findAdapter.setOnItemClickListener();    error
 

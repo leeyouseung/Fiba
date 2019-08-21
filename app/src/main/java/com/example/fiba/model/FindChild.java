@@ -9,7 +9,7 @@ public class FindChild {
     @PrimaryKey(autoGenerate = true)
     private int childId;
 
-    private String childPhoto;
+    private int childPhoto;
 
     private String childWeight;
     private String childHeight;
@@ -19,7 +19,7 @@ public class FindChild {
     private String childPlace;
     private String childAge;
 
-    public FindChild(String childPhoto, String childName, String childSex, String childPlace, String childAge, String childHeight, String childWeight) {
+    public FindChild(int childPhoto, String childName, String childSex, String childPlace, String childAge, String childHeight, String childWeight) {
 
         this.childPhoto = childPhoto;
         this.childName = childName;
@@ -30,12 +30,22 @@ public class FindChild {
         this.childWeight = childWeight;
     }
 
-    public String getChildPhoto() {
+    public int getChildId() {
+
+        return childId;
+    }
+
+    public void setChildId(int childId) {
+
+        this.childId = childId;
+    }
+
+    public int getChildPhoto() {
 
         return childPhoto;
     }
 
-    public void setChildPhoto(String childPhoto) {
+    public void setChildPhoto(int childPhoto) {
 
         this.childPhoto = childPhoto;
     }
