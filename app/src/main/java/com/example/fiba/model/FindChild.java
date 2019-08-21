@@ -1,6 +1,13 @@
 package com.example.fiba.model;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "find_child_table")
 public class FindChild {
+
+    @PrimaryKey(autoGenerate = true)
+    private int childId;
 
     private String childPhoto;
 
