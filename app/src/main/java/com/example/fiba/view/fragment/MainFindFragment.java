@@ -151,11 +151,13 @@ public class MainFindFragment extends Fragment {
             Intent intent = new Intent(getContext(), AddFragment.class);
 
             intent.putExtra(AddFragment.EXTRA_ID, findChild.getChildId());
+            intent.putExtra(String.valueOf(AddFragment.EXTRA_FIND_CHILD_IMAGE), findChild.getChildPhoto());
             intent.putExtra(AddFragment.EXTRA_FIND_CHILD_NAME, findChild.getChildName());
             intent.putExtra(AddFragment.EXTRA_FIND_CHILD_SEX, findChild.getChildSex());
             intent.putExtra(AddFragment.EXTRA_FIND_CHILD_AGE, findChild.getChildAge());
+            intent.putExtra(AddFragment.EXTRA_FIND_CHILD_PLACE, findChild.getChildPlace());
             intent.putExtra(AddFragment.EXTRA_FIND_CHILD_HEIGHT, findChild.getChildHeight());
-            intent.putExtra(AddFragment.EXTRA_FIND_CHLID_WEIGHT, findChild.getChildWeight());
+            intent.putExtra(AddFragment.EXTRA_FIND_CHILD_WEIGHT, findChild.getChildWeight());
 
             startActivityForResult(intent, EDIT_NOTE_REQUEST);
         });
