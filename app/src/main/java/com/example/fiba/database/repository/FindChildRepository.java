@@ -26,22 +26,22 @@ public class FindChildRepository {
 
     public void insert(FindChild findChild) {
 
-        new InsertNoteAsyncTask(findChildDao).execute(findChild);
+        new InsertFindChildAsyncTask(findChildDao).execute(findChild);
     }
 
     public void update(FindChild findChild) {
 
-        new UpdateNoteAsyncTask(findChildDao).execute(findChild);
+        new UpdateFindChildAsyncTask(findChildDao).execute(findChild);
     }
 
     public void delete(FindChild findChild) {
 
-        new DeleteNoteAsyncTask(findChildDao).execute(findChild);
+        new DeleteFindChildAsyncTask(findChildDao).execute(findChild);
     }
 
     public void deleteAllFindChild() {
 
-        new DeleteAllNotesAsyncTask(findChildDao).execute();
+        new DeleteAllFindChildAsyncTask(findChildDao).execute();
     }
 
     public LiveData<List<FindChild>> getAllFindChild() {
@@ -49,73 +49,73 @@ public class FindChildRepository {
         return allFindChild;
     }
 
-    private static class InsertNoteAsyncTask extends AsyncTask<FindChild, Void, Void> {
+    private static class InsertFindChildAsyncTask extends AsyncTask<FindChild, Void, Void> {
 
         private FindChildDao findChildDao;
 
-        private InsertNoteAsyncTask(FindChildDao findChildDao) {
+        private InsertFindChildAsyncTask(FindChildDao findChildDao) {
 
             this.findChildDao = findChildDao;
         }
 
         @Override
-        protected Void doInBackground(FindChild... findChildDao) {
+        protected Void doInBackground(FindChild... findChildren) {
 
-            findChildDao.insert(notes[0]);
+            findChildDao.insert(findChildren[0]);
 
             return null;
         }
     }
 
-    private static class UpdateNoteAsyncTask extends AsyncTask<FindChild, Void, Void> {
+    private static class UpdateFindChildAsyncTask extends AsyncTask<FindChild, Void, Void> {
 
         private FindChildDao findChildDao;
 
-        private UpdateNoteAsyncTask(FindChildDao findChildDao) {
+        private UpdateFindChildAsyncTask(FindChildDao findChildDao) {
 
             this.findChildDao = findChildDao;
         }
 
         @Override
-        protected Void doInBackground(FindChild... findChildDao) {
+        protected Void doInBackground(FindChild... findChildren) {
 
-            findChildDao.update(notes[0]);
+            findChildDao.update(findChildren[0]);
 
             return null;
         }
     }
 
-    private static class DeleteNoteAsyncTask extends AsyncTask<FindChild, Void, Void> {
+    private static class DeleteFindChildAsyncTask extends AsyncTask<FindChild, Void, Void> {
 
         private FindChildDao findChildDao;
 
-        private DeleteNoteAsyncTask(FindChildDao findChildDao) {
+        private DeleteFindChildAsyncTask(FindChildDao findChildDao) {
 
             this.findChildDao = findChildDao;
         }
 
         @Override
-        protected Void doInBackground(FindChild... findChildDao) {
+        protected Void doInBackground(FindChild... findChildren) {
 
-            findChildDao.delete([0]);
+            findChildDao.delete(findChildren[0]);
 
             return null;
         }
     }
 
-    private static class DeleteAllNotesAsyncTask extends AsyncTask<FindChild, Void, Void> {
+    private static class DeleteAllFindChildAsyncTask extends AsyncTask<FindChild, Void, Void> {
 
         private FindChildDao findChildDao;
 
-        private DeleteAllNotesAsyncTask(FindChildDao findChildDao) {
+        private DeleteAllFindChildAsyncTask(FindChildDao findChildDao) {
 
             this.findChildDao = findChildDao;
         }
 
         @Override
-        protected Void doInBackground(FindChild... findChildDao) {
+        protected Void doInBackground(FindChild... findChildren) {
 
-            findChildDao.deleteAllNote();
+            findChildDao.deleteAllFindChild();
 
             return null;
         }
