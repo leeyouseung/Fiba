@@ -1,21 +1,27 @@
 package com.example.fiba.view.fragment;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.fiba.R;
 import com.example.fiba.databinding.FragmentMainFindBinding;
 import com.example.fiba.model.FindChild;
+import com.example.fiba.viewmodel.FindChildViewModel;
 import com.example.fiba.widget.recyclerview.adapter.FindChildAdapter;
 
 import java.util.ArrayList;
@@ -34,7 +40,12 @@ public class MainFindFragment extends Fragment {
 
     //-----------------------------------------------
 
+    public static final int ADD_NOTE_REQUEST = 1000;
+    public static final int EDIT_NOTE_REQUEST = 1001;
+
     FragmentMainFindBinding binding;
+
+    private FindChildViewModel findChildViewModel;
 
     private List<FindChild> findChildList = new ArrayList<>();
 
@@ -100,41 +111,56 @@ public class MainFindFragment extends Fragment {
 
         initData();
 
-        getData();
-
         event();
     }
 
     private void initData() {
 
-        RecyclerView recyclerView = Objects.requireNonNull(getView()).findViewById(R.id.recyclerview_main_find);
+        RecyclerView recyclerView = getView().findViewById(R.id.recyclerview_main_find);
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(Objects.requireNonNull(getContext()).getApplicationContext());
-        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setHasFixedSize(true);
 
-        FindChildAdapter findAdapter = new FindChildAdapter();
+        final FindChildAdapter adapter = new FindChildAdapter();
+        recyclerView.setAdapter(adapter);
 
-//        findAdapter.setOnItemClickListener();    error
+        findChildViewModel = ViewModelProviders.of(this).get(FindChildViewModel.class);
 
-        recyclerView.setAdapter(findAdapter);
-    }
+        findChildViewModel.getAllFindChild().observe(this, notes -> {
 
-    private void getData() {
+            // update RecyclerView
+            adapter.submitList(notes);
+        });
 
-//        List<String> listTitle = new ArrayList<>();
-//
-//        listTitle.add(title);
-//
-//        for(int i=0;i<listTitle.size();i++) {
-//
-//            FindChild findChild = new FindChild();
-//
-//            data.setTitle(listTitle.get(i));
-//
-//            recyclerviewAdapter.addItem(data);
-//        }
-//
-//        recyclerviewAdapter.notifyDataSetChanged();
+        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+
+                return false;
+            }
+
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+
+                findChildViewModel.delete(adapter.getFindChildAt(viewHolder.getAdapterPosition()));
+
+                Toast.makeText(getContext(), "삭제되었습니다.", Toast.LENGTH_SHORT).show();
+            }
+        }).attachToRecyclerView(recyclerView);
+
+        adapter.setItemClickListener(findChild -> {
+
+            Intent intent = new Intent(getContext(), AddFragment.class);
+
+            intent.putExtra(AddFragment.EXTRA_ID, findChild.getChildId());
+            intent.putExtra(AddFragment.EXTRA_FIND_CHILD_NAME, findChild.getChildName());
+            intent.putExtra(AddFragment.EXTRA_FIND_CHILD_SEX, findChild.getChildSex());
+            intent.putExtra(AddFragment.EXTRA_FIND_CHILD_AGE, findChild.getChildAge());
+            intent.putExtra(AddFragment.EXTRA_FIND_CHILD_HEIGHT, findChild.getChildHeight());
+            intent.putExtra(AddFragment.EXTRA_FIND_CHLID_WEIGHT, findChild.getChildWeight());
+
+            startActivityForResult(intent, EDIT_NOTE_REQUEST);
+        });
     }
 
     private void event() {

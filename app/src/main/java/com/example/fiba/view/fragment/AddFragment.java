@@ -27,6 +27,15 @@ public class AddFragment extends Fragment {
 
     //--------------------------------------------------------------------
 
+    public static final String EXTRA_ID = "id";
+    public static final int EXTRA_FIND_CHLID_IMAGE = 1;
+    public static final String EXTRA_FIND_CHILD_NAME = "name";
+    public static final String EXTRA_FIND_CHILD_SEX = "sex";
+    public static final String EXTRA_FIND_CHILD_AGE = "age";
+    public static final String EXTRA_FIND_CHILD_PLACE = "place";
+    public static final String EXTRA_FIND_CHILD_HEIGHT = "height";
+    public static final String EXTRA_FIND_CHLID_WEIGHT = "weight";
+
     FragmentAddBinding binding;
 
     //--------------------------------------------------------------------
