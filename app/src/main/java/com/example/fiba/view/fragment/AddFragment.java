@@ -1,6 +1,7 @@
 package com.example.fiba.view.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -12,6 +13,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.fiba.R;
 import com.example.fiba.databinding.FragmentAddBinding;
@@ -122,14 +125,35 @@ public class AddFragment extends Fragment {
 
     private void clickConfirmAdd() {
 
+        ImageView findChildImage = binding.addChildImage.getImageAlpha();
         String findChildName = binding.addChildNameText.getText().toString();
         String findChildAge = binding.ageSpinner.getSelectedItem().toString();
         String findChildSex = binding.manButton.getText().toString();
-        if(findChildSex.isEmpty()) {
+        String findChildProtecter = binding.protectPhoneNumber.getText().toString();
+        String findChildHeight = binding.heightButton.getText().toString();
+        String findChildWeight = binding.weightButton.getText().toString();
+        String detailContents = binding.detailContents.getText().toString();
 
-            findChildSex = binding.womanButton.getText().toString();
+        if(findChildName.trim().isEmpty() || findChildAge.trim().isEmpty() ||
+                findChildProtecter.trim().isEmpty() || findChildHeight.trim().isEmpty() ||
+                findChildWeight.trim().isEmpty() || detailContents.trim().isEmpty()) {
+
+            Toast.makeText(getContext(), "모든 항목 값을 입력해주세요", Toast.LENGTH_SHORT).show();
+
+            return;
         }
-//        String findChild
+
+        Intent intent = new Intent();
+
+        intent.putExtra(EXTRA_FIND_CHILD_IMAGE, );
+        intent.putExtra(AddFragment.EXTRA_FIND_CHILD_NAME, findChild.getChildName());
+        intent.putExtra(AddFragment.EXTRA_FIND_CHILD_SEX, findChild.getChildSex());
+        intent.putExtra(AddFragment.EXTRA_FIND_CHILD_AGE, findChild.getChildAge());
+        intent.putExtra(AddFragment.EXTRA_FIND_CHILD_PLACE, findChild.getChildPlace());
+        intent.putExtra(AddFragment.EXTRA_FIND_CHILD_HEIGHT, findChild.getChildHeight());
+        intent.putExtra(AddFragment.EXTRA_FIND_CHILD_WEIGHT, findChild.getChildWeight());
+        intent.putExtra(AddFragment.EXTRA_FIND_CHILD_PROTECTER, findChild.getFindChildProtecter());
+        intent.putExtra(AddFragment.EXTRA_FIND_CHILD_DETAILCONTENTS, findChild.getDetailContents());
     }
 
     //--------------------------------------------------------------------
