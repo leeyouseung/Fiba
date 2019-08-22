@@ -36,6 +36,8 @@ public class AddFragment extends Fragment {
     public static final String EXTRA_FIND_CHILD_PLACE = "place";
     public static final String EXTRA_FIND_CHILD_HEIGHT = "height";
     public static final String EXTRA_FIND_CHILD_WEIGHT = "weight";
+    public static final String EXTRA_FIND_CHILD_PROTECTER = "protecter";
+    public static final String EXTRA_FIND_CHILD_DETAILCONTENTS = "detail_contents";
 
     FragmentAddBinding binding;
 

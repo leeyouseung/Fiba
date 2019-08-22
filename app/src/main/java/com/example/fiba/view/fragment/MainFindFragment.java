@@ -158,6 +158,8 @@ public class MainFindFragment extends Fragment {
             intent.putExtra(AddFragment.EXTRA_FIND_CHILD_PLACE, findChild.getChildPlace());
             intent.putExtra(AddFragment.EXTRA_FIND_CHILD_HEIGHT, findChild.getChildHeight());
             intent.putExtra(AddFragment.EXTRA_FIND_CHILD_WEIGHT, findChild.getChildWeight());
+            intent.putExtra(AddFragment.EXTRA_FIND_CHILD_PROTECTER, findChild.getFindChildProtecter());
+            intent.putExtra(AddFragment.EXTRA_FIND_CHILD_DETAILCONTENTS, findChild.getDetailContents());
 
             startActivityForResult(intent, EDIT_NOTE_REQUEST);
         });
