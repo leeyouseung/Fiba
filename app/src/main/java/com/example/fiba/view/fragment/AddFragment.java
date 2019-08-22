@@ -125,10 +125,11 @@ public class AddFragment extends Fragment {
 
     private void clickConfirmAdd() {
 
-        ImageView findChildImage = binding.addChildImage.getImageAlpha();
+//        ImageView findChildImage = binding.addChildImage.getImageAlpha();
         String findChildName = binding.addChildNameText.getText().toString();
         String findChildAge = binding.ageSpinner.getSelectedItem().toString();
         String findChildSex = binding.manButton.getText().toString();
+        String findChildPlace = binding.placeText.getText().toString();
         String findChildProtecter = binding.protectPhoneNumber.getText().toString();
         String findChildHeight = binding.heightButton.getText().toString();
         String findChildWeight = binding.weightButton.getText().toString();
@@ -145,15 +146,15 @@ public class AddFragment extends Fragment {
 
         Intent intent = new Intent();
 
-        intent.putExtra(EXTRA_FIND_CHILD_IMAGE, );
-        intent.putExtra(AddFragment.EXTRA_FIND_CHILD_NAME, findChild.getChildName());
-        intent.putExtra(AddFragment.EXTRA_FIND_CHILD_SEX, findChild.getChildSex());
-        intent.putExtra(AddFragment.EXTRA_FIND_CHILD_AGE, findChild.getChildAge());
-        intent.putExtra(AddFragment.EXTRA_FIND_CHILD_PLACE, findChild.getChildPlace());
-        intent.putExtra(AddFragment.EXTRA_FIND_CHILD_HEIGHT, findChild.getChildHeight());
-        intent.putExtra(AddFragment.EXTRA_FIND_CHILD_WEIGHT, findChild.getChildWeight());
-        intent.putExtra(AddFragment.EXTRA_FIND_CHILD_PROTECTER, findChild.getFindChildProtecter());
-        intent.putExtra(AddFragment.EXTRA_FIND_CHILD_DETAILCONTENTS, findChild.getDetailContents());
+//        intent.putExtra(EXTRA_FIND_CHILD_IMAGE, findChildImage);
+        intent.putExtra(AddFragment.EXTRA_FIND_CHILD_NAME, findChildName);
+        intent.putExtra(AddFragment.EXTRA_FIND_CHILD_SEX, findChildSex);
+        intent.putExtra(AddFragment.EXTRA_FIND_CHILD_AGE, findChildAge);
+        intent.putExtra(AddFragment.EXTRA_FIND_CHILD_PLACE, findChildPlace);
+        intent.putExtra(AddFragment.EXTRA_FIND_CHILD_HEIGHT, findChildHeight);
+        intent.putExtra(AddFragment.EXTRA_FIND_CHILD_WEIGHT, findChildWeight);
+        intent.putExtra(AddFragment.EXTRA_FIND_CHILD_PROTECTER, findChildProtecter);
+        intent.putExtra(AddFragment.EXTRA_FIND_CHILD_DETAILCONTENTS, detailContents);
     }
 
     //--------------------------------------------------------------------

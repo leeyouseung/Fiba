@@ -55,13 +55,16 @@ public abstract class FindChildDatabase extends RoomDatabase {
         protected Void doInBackground(Void... voids) {
 
             findChildDao.insert(new FindChild(R.drawable.child_image_find, "이재민", "남",
-                    "대구소프트웨어고등학교 정문", "18", "160", "50"));
+                    "대구소프트웨어고등학교 정문", "18", "160", "50",
+                    "010-0000-0000", "안녕하세요"));
 
             findChildDao.insert(new FindChild(R.drawable.child_image_find, "김태빈", "남",
-                    "대구소프트웨어고등학교 후문", "18", "165", "60"));
+                    "대구소프트웨어고등학교 후문", "18", "165", "60",
+                    "010-1234-1234", "우리 아이 좀 찾아주세요 ㅠㅠ"));
 
             findChildDao.insert(new FindChild(R.drawable.child_image_find, "곽현준", "남",
-                    "대구소프트웨어고등학교 운동장", "18", "190", "90"));
+                    "대구소프트웨어고등학교 운동장", "18", "190", "90",
+                    "010-1010-0101", "슬프네요"));
 
             return null;
         }
