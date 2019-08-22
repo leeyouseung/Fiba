@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools" >
 
 <FrameLayout
@@ -10,7 +11,6 @@
 
     <ScrollView android:layout_width="match_parent"
         android:layout_height="match_parent"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -199,17 +199,21 @@
                 android:paddingStart="4dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/phoneText"
-                tools:ignore="HardcodedText,LabelFor,MissingConstraints,TextFields" />
+                tools:ignore="HardcodedText,LabelFor,MissingConstraints,RtlSymmetry,TextFields" />
 
             <Button
                 android:id="@+id/confirmAdd"
-                android:layout_width="75dp"
-                android:layout_height="32dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
                 android:layout_marginTop="22dp"
+                android:layout_marginEnd="140dp"
+                android:layout_marginStart="140dp"
+                android:layout_marginBottom="12dp"
                 android:background="@drawable/login_button_line"
                 android:text="등록"
                 android:textColor="#fff"
                 android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/detailContents"
                 app:layout_constraintHorizontal_bias="0.501"
                 app:layout_constraintStart_toStartOf="@+id/detailContents"

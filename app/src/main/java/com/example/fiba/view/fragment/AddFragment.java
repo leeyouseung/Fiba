@@ -8,6 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -105,7 +106,6 @@ public class AddFragment extends Fragment {
 
     private void initData() {
 
-
     }
 
     private void event() {
@@ -115,7 +115,19 @@ public class AddFragment extends Fragment {
 
     private void clickEvent() {
 
-        
+        clickConfirmAdd();
+    }
+
+    private void clickConfirmAdd() {
+
+        String findChildName = binding.addChildNameText.getText().toString();
+        String findChildAge = binding.ageSpinner.getSelectedItem().toString();
+        String findChildSex = binding.manButton.getText().toString();
+        if(findChildSex.isEmpty()) {
+
+            findChildSex = binding.womanButton.getText().toString();
+        }
+//        String findChild
     }
 
     //--------------------------------------------------------------------
