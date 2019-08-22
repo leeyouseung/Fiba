@@ -11,15 +11,17 @@ public class FindChild {
 
     private int childPhoto;
 
-    private String childWeight;
-    private String childHeight;
-
     private String childName;
     private String childSex;
     private String childPlace;
     private String childAge;
+    private String childWeight;
+    private String childHeight;
+    private String findChildProtecter;
+    private String detailContents;
 
-    public FindChild(int childPhoto, String childName, String childSex, String childPlace, String childAge, String childHeight, String childWeight) {
+    public FindChild(int childPhoto, String childName, String childSex, String childPlace,
+                     String childAge, String childHeight, String childWeight, String findChildProtecter, String detailContents) {
 
         this.childPhoto = childPhoto;
         this.childName = childName;
@@ -28,6 +30,8 @@ public class FindChild {
         this.childPlace = childPlace;
         this.childHeight = childHeight;
         this.childWeight = childWeight;
+        this.findChildProtecter = findChildProtecter;
+        this.detailContents = detailContents;
     }
 
     public int getChildId() {
@@ -108,5 +112,25 @@ public class FindChild {
     public void setChildAge(String childAge) {
 
         this.childAge = childAge;
+    }
+
+    public String getFindChildProtecter() {
+
+        return findChildProtecter;
+    }
+
+    public void setFindChildProtecter(String findChildProtecter) {
+
+        this.findChildProtecter = findChildProtecter;
+    }
+
+    public String getDetailContents() {
+
+        return detailContents;
+    }
+
+    public void setDetailContents(String detailContents) {
+
+        this.detailContents = detailContents;
     }
 }
