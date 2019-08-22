@@ -105,6 +105,7 @@ public class AddFragment extends Fragment {
 
     private void initData() {
 
+
     }
 
     private void event() {
