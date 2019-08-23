@@ -5,14 +5,20 @@ import android.os.Bundle;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+
 import com.example.fiba.R;
-import com.example.fiba.base.BaseActivity;
 import com.example.fiba.databinding.SplashActivityBinding;
 
-public class SplashActivity extends BaseActivity<SplashActivityBinding> {
+public class SplashActivity extends AppCompatActivity {
+
+    SplashActivityBinding binding;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        binding = DataBindingUtil.setContentView(this, R.layout.splash_activity);
 
         Animation hold = AnimationUtils.loadAnimation(this, R.anim.splash_hold);
 
@@ -61,11 +67,5 @@ public class SplashActivity extends BaseActivity<SplashActivityBinding> {
         });
 
         binding.logo.startAnimation(hold);
-    }
-
-    @Override
-    protected int layoutId() {
-
-        return R.layout.splash_activity;
     }
 }

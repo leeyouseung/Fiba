@@ -1,31 +1,28 @@
 package com.example.fiba.view.activity;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import com.example.fiba.R;
-import com.example.fiba.base.BaseActivity;
 import com.example.fiba.databinding.ActivityMainBinding;
 import com.example.fiba.view.fragment.AddFragment;
 import com.example.fiba.view.fragment.MainFragment;
 import com.example.fiba.view.fragment.MyPageFragment;
 import com.example.fiba.view.fragment.SearchFragment;
 
-public class MainActivity extends BaseActivity<ActivityMainBinding> {
+public class MainActivity extends AppCompatActivity {
 
-    @Override
-    protected int layoutId() {
-
-        return R.layout.activity_main;
-    }
+    ActivityMainBinding binding;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
         setting();
 

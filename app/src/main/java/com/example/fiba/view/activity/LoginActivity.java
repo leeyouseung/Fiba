@@ -8,29 +8,24 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+
 import com.example.fiba.R;
-import com.example.fiba.base.BaseActivity;
 import com.example.fiba.databinding.ActivityLoginBinding;
-import com.example.fiba.network.request.LoginRequest;
-//import com.example.fiba.viewmodel.LoginViewModel;
 
-public class LoginActivity extends BaseActivity<ActivityLoginBinding> {
+public class LoginActivity extends AppCompatActivity {
 
-//    private LoginViewModel loginViewModel;
+    ActivityLoginBinding binding;
 
     Intent intent;
 
     private boolean checkBlind = false;
 
     @Override
-    protected int layoutId() {
-
-        return R.layout.activity_login;
-    }
-
-    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_login);
 
         fadeOutAnimation();
 
